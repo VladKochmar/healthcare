@@ -1,0 +1,113 @@
+@use "@angular/material" as mat;
+@import "../variables";
+
+$custom-primary-palette: (
+  50: #e8f7f0,
+  100: $primary-ligth,
+  200: #6ec49a,
+  300: #57b086,
+  400: $primary,
+  500: #449a83,
+  600: #3c866f,
+  700: #30705c,
+  800: #255946,
+  900: #1a4232,
+  A100: $primary-ligth,
+  A200: #57b086,
+  A400: $primary,
+  A700: #30705c,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: $white,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white,
+    A100: #000,
+    A200: $white,
+    A400: $white,
+    A700: $white,
+  ),
+);
+
+$custom-accent-palette: (
+  50: #e3f2fd,
+  100: #bbdefb,
+  200: #90caf9,
+  300: #64b5f6,
+  400: $secondary,
+  500: #135ba9,
+  600: #0e4b90,
+  700: #083476,
+  800: #05275d,
+  900: #031a43,
+  A100: #bbdefb,
+  A200: #64b5f6,
+  A400: $secondary,
+  A700: #083476,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: $white,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white,
+    A100: #000,
+    A200: $white,
+    A400: $white,
+    A700: $white,
+  ),
+);
+
+$custom-warn-palette: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: $error,
+  600: #d32f2f,
+  700: #c62828,
+  800: #b71c1c,
+  900: #8e0000,
+  A100: #ffcdd2,
+  A200: #e57373,
+  A400: $error,
+  A700: #c62828,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: $white,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white,
+    A100: #000,
+    A200: $white,
+    A400: $white,
+    A700: $white,
+  ),
+);
+
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette($custom-primary-palette, 400, 100, 700),
+      accent: mat.define-palette($custom-accent-palette, 400, 100, 700),
+      warn: mat.define-palette($custom-warn-palette, 500, 100, 700),
+    ),
+  )
+);
+
+@include mat.all-component-themes($custom-theme);

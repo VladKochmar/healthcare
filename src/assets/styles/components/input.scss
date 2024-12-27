@@ -1,0 +1,43 @@
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  padding: 0.75rem 0;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field {
+  @supports (top: max(0%)) {
+    &.mdc-text-field--outlined {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+}
+
+.mat-mdc-form-field-infix {
+  min-height: auto;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-text-field__input {
+  color: $text-main !important;
+}
+
+.mat-mdc-form-field-hint.mat-mdc-form-field-bottom-align {
+  color: $text-secondary;
+  font-size: $text-xxs;
+}
+
+.mat-mdc-form-field-error.mat-mdc-form-field-bottom-align {
+  color: $error;
+  font-size: $text-xxs;
+}
+
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+  padding-bottom: 10px;
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field {
+  background-color: $white;
+  &.mdc-text-field--invalid {
+    background-color: $error-light;
+    box-shadow: $shadow-error;
+  }
+}
