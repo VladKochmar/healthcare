@@ -14,6 +14,10 @@
   flex: 1 1 auto;
 }
 
+// Common
+@import "./assets/styles/common/titles";
+
 // UI Components
 @import "./assets/styles/components/button";
-@import "./assets/styles/components/input";
+@import "./assets/styles/components/forms";
+// @import "./assets/styles/components/input";

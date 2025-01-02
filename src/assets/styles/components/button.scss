@@ -1,7 +1,11 @@
-.mdc-button {
+.main-button {
   .mdc-button__label {
-    color: $white;
+    font-size: 1rem;
     text-transform: uppercase;
   }
-  box-shadow: $shadow-tiny;
+  &.mat-mdc-unelevated-button,
+  .mat-mdc-unelevated-button .mdc-button__ripple {
+    border-radius: $rounded;
+  }
+  // box-shadow: $shadow-tiny;
 }

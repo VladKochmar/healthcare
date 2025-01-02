@@ -1,0 +1,39 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
+    <h1 class="auth-form__title title-h2">Sign Up</h1>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your name</mat-label>
+      <input matInput placeholder="Sean" required formControlName="name" />
+      <mat-hint>Min 2 characters</mat-hint>
+      <mat-error>{{ getError('name') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your email</mat-label>
+      <input matInput type="email" placeholder="user@gmail.com" required formControlName="email" />
+      <mat-hint>Avoid using temporary or disposable email addresses</mat-hint>
+      <mat-error>{{ getError('email') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide() ? 'password' : 'text'" formControlName="password" />
+      <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
+        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-hint>Min 8 characters</mat-hint>
+      <mat-error>{{ getError('password') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Select an account type</mat-label>
+      <mat-select formControlName="role_id">
+        <mat-option value="1">Doctor</mat-option>
+        <mat-option value="2">Patient</mat-option>
+      </mat-select>
+      <mat-hint>Choose a role: Patient or Doctor</mat-hint>
+      <mat-error>{{ getError('role_id') }}</mat-error>
+    </mat-form-field>
+    @if (authError) {
+    <p class="auth-form__error">{{ authError }}</p>
+    }
+    <button mat-flat-button class="main-button">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+.footer {
+  color: #f5f5f5;
+  padding: 1.5rem 2rem;
+  background-color: #4caf93;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+@media (width < 560px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+.footer__list {
+  display: inline-flex;
+  align-items: center;
+  gap: 0 1.5rem;
+}
+.footer__link {
+  transition: color 0.3s ease 0s;
+}
+.footer__link:hover {
+  color: #bdbdbd;
+}

@@ -1,4 +1,13 @@
 <div class="wrapper">
+  <header>
+    <ul>
+      <li>
+        <a [routerLink]="['/']">Home</a>
+        <a [routerLink]="['/sign-up']">Sign Up</a>
+        <a [routerLink]="['/log-in']">Log In</a>
+      </li>
+    </ul>
+  </header>
   <main class="main">
     <router-outlet />
   </main>
