@@ -1,0 +1,28 @@
+.users-services {
+  // .users-services__title
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+  // .users-services__list
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+  // .users-services__item
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+  // .users-services__button
+  &__button {
+    width: 100%;
+  }
+}
+.title-h1 {
+}
+.main-button {
+}

@@ -1,0 +1,23 @@
+<div class="service-card">
+  <div class="service-card__header">
+    <h3 class="service-card__title">{{ data.title }}</h3>
+    <span class="service-card__price">{{ data.price }} $</span>
+  </div>
+  <div class="service-card__body">
+    <p class="service-card__description">
+      {{ data.description }}
+    </p>
+    <div class="service-card__info">
+      <span class="service-card__duration">Duration: {{ data.duration }} min</span>
+      <span class="service-card__doctor">Doctor: {{ data.doctor_name }}</span>
+    </div>
+  </div>
+  <div class="service-card__footer">
+    @if (role === 'viewer') {
+    <button mat-flat-button class="service-card__button small-btn main-button">Book</button>
+    } @else {
+    <a [routerLink]="['/service-editor', data.id]" mat-flat-button class="small-btn warn-button main-button">Edit</a>
+    <button (click)="onDelete()" mat-flat-button class="small-btn danger-button main-button">Delete</button>
+    }
+  </div>
+</div>

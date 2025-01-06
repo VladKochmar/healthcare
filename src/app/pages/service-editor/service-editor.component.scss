@@ -1,0 +1,8 @@
+.service-creator {
+  // .service-creator__title
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

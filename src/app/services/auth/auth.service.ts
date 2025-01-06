@@ -29,10 +29,11 @@ interface User {
   id: number;
   name: string;
   email: string;
-  role_id: string;
+  role_id: number;
 }
 
 interface DecodedToken {
+  role_id: number;
   exp: number;
   iat: number;
 }
@@ -68,6 +69,17 @@ export class AuthService {
       this.logout();
       return false;
     }
+  }
+
+  hasDoctorRole() {
+    const token = this.getToken();
+
+    if (!token) return false;
+
+    const decoded: DecodedToken = jwtDecode(token);
+    const isDoctor = decoded.role_id === 1;
+
+    return isDoctor;
   }
 
   login(formData: LoginForm) {

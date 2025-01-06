@@ -51,8 +51,7 @@ export class ProfileComponent extends ClearObservable implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user$ = this.userService.getUser();
-    this.userService.getProfile();
+    this.user$ = this.userService.ensureUserLoaded();
 
     this.initForm();
     this.user$
@@ -105,7 +104,7 @@ export class ProfileComponent extends ClearObservable implements OnInit {
   }
 
   openSnackBar() {
-    this._snackBar.open('Дані успішно оновлено!', 'Закрити', {
+    this._snackBar.open('Profile successfully updated!', 'Close', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
     });

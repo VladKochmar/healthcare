@@ -24,3 +24,31 @@
     background-color: $error-light;
   }
 }
+
+.body-profile-form {
+  // .body-profile-form__row
+  &__row {
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+  // .body-profile-form__label
+  &__label {
+    width: 100%;
+    max-width: 10rem;
+    font-weight: 500;
+    padding-top: 0.75rem;
+    padding-right: 1.5rem;
+  }
+  // .body-profile-form__inp
+  &__inp {
+    flex: 1 1 auto;
+    max-width: 26.25rem;
+  }
+  // .body-profile-form__button
+  &__button {
+    width: 100%;
+    max-width: 36.25rem;
+  }
+}

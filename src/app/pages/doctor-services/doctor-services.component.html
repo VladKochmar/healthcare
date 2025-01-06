@@ -1,0 +1,16 @@
+<div class="container users-services">
+  <h1 class="users-services__title title-h1">My Services</h1>
+  <ng-container *ngIf="services$ | async; let services;">
+    <div *ngIf="services.length; else empty" class="users-services__list">
+      @for (service of services; track $index) {
+      <div class="users-services__item">
+        <app-service-card [data]="service" role="owner"></app-service-card>
+      </div>
+      }
+    </div>
+    <ng-template #empty>
+      <p>Currently it's empty</p>
+    </ng-template>
+  </ng-container>
+  <a [routerLink]="['/service-editor']" mat-flat-button class="users-services__button main-button">ADD NEW SERVICE</a>
+</div>

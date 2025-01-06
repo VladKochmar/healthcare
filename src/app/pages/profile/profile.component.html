@@ -11,32 +11,32 @@
       </label>
       <h1 class="title-h1">{{ user.name }}</h1>
     </div>
-    <div class="profile-form__body">
-      <div class="profile-form__row">
-        <label for="user_name" class="profile-form__label">Name</label>
-        <mat-form-field appearance="outline" class="profile-form__inp">
+    <div class="profile-form__body body-profile-form">
+      <div class="body-profile-form__row">
+        <label for="user_name" class="body-profile-form__label">Name</label>
+        <mat-form-field appearance="outline" class="body-profile-form__inp">
           <input matInput placeholder="Sean" required formControlName="name" id="user_name" />
         </mat-form-field>
       </div>
-      <div class="profile-form__row">
-        <label for="user_email" class="profile-form__label">Email</label>
-        <mat-form-field appearance="outline" class="profile-form__inp">
+      <div class="body-profile-form__row">
+        <label for="user_email" class="body-profile-form__label">Email</label>
+        <mat-form-field appearance="outline" class="body-profile-form__inp">
           <input matInput placeholder="user@gmail.com" required formControlName="email" id="user_email" />
         </mat-form-field>
       </div>
-      <div class="profile-form__row">
-        <label for="user_phone" class="profile-form__label">Phone Number</label>
-        <mat-form-field appearance="outline" class="profile-form__inp">
+      <div class="body-profile-form__row">
+        <label for="user_phone" class="body-profile-form__label">Phone Number</label>
+        <mat-form-field appearance="outline" class="body-profile-form__inp">
           <input matInput placeholder="+38 (000) 000 00 00" formControlName="phone_number" id="user_phone" />
         </mat-form-field>
       </div>
-      <div class="profile-form__row">
-        <label for="user_bio" class="profile-form__label">Your Bio</label>
-        <mat-form-field appearance="outline" class="profile-form__inp">
+      <div class="body-profile-form__row">
+        <label for="user_bio" class="body-profile-form__label">Your Bio</label>
+        <mat-form-field appearance="outline" class="body-profile-form__inp">
           <textarea matInput placeholder="Write something about yourself..." formControlName="bio" id="user_bio"></textarea>
         </mat-form-field>
       </div>
-      <button mat-flat-button class="profile-form__button main-button">Save changes</button>
+      <button mat-flat-button class="body-profile-form__button main-button">Save changes</button>
     </div>
   </form>
   <button class="delete-button" (click)="onDelete()">

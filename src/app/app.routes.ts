@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
+import { roleGuard } from './guards/role/role.guard';
 
 export const routes: Routes = [
   {
@@ -26,5 +27,29 @@ export const routes: Routes = [
         (m) => m.ProfileComponent
       ),
     canActivate: [authGuard],
+  },
+  {
+    path: 'your-services',
+    loadComponent: () =>
+      import('./pages/doctor-services/doctor-services.component').then(
+        (m) => m.DoctorServicesComponent
+      ),
+    canActivate: [authGuard, roleGuard],
+  },
+  {
+    path: 'service-editor/:id',
+    loadComponent: () =>
+      import('./pages/service-editor/service-editor.component').then(
+        (m) => m.ServiceEditorComponent
+      ),
+    canActivate: [authGuard, roleGuard],
+  },
+  {
+    path: 'service-editor',
+    loadComponent: () =>
+      import('./pages/service-editor/service-editor.component').then(
+        (m) => m.ServiceEditorComponent
+      ),
+    canActivate: [authGuard, roleGuard],
   },
 ];

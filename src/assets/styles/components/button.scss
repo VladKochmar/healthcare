@@ -9,3 +9,24 @@
   }
   // box-shadow: $shadow-tiny;
 }
+
+.small-btn.main-button {
+  &.mat-mdc-unelevated-button {
+    padding: 0.5rem 1rem;
+  }
+  .mdc-button__label {
+    font-size: 0.875rem;
+  }
+}
+
+.warn-button {
+  &.mat-mdc-unelevated-button:not(:disabled) {
+    background-color: $warning;
+  }
+}
+
+.danger-button {
+  &.mat-mdc-unelevated-button:not(:disabled) {
+    background-color: $error;
+  }
+}

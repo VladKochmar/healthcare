@@ -1,0 +1,36 @@
+<div class="container service-creator">
+  <h1 class="service-creator__title title-h1">Service Creator</h1>
+  <form [formGroup]="form" (submit)="onSubmit()" class="body-profile-form">
+    <div class="body-profile-form__row">
+      <label for="service" class="body-profile-form__label">Service Name</label>
+      <mat-form-field appearance="outline" class="body-profile-form__inp">
+        <mat-select formControlName="service_id" placeholder="Select service" id="service">
+          <mat-option *ngFor="let template of templates$ | async" [value]="template.template_id">{{ template.name }}</mat-option>
+        </mat-select>
+        <mat-hint>First, choose a service</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="body-profile-form__row">
+      <label for="price" class="body-profile-form__label">Price</label>
+      <mat-form-field appearance="outline" class="body-profile-form__inp">
+        <input matInput formControlName="custom_price" placeholder="Write the price of your service" id="price" />
+        <mat-hint>Default value: <strong>{{ selectedTemplate?.default_price || 'None' }}</strong></mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="body-profile-form__row">
+      <label for="duration" class="body-profile-form__label">Duration</label>
+      <mat-form-field appearance="outline" class="body-profile-form__inp">
+        <input matInput formControlName="custom_duration" placeholder="Write the duration of your service" id="duration" />
+        <mat-hint>Default value: <strong>{{ selectedTemplate?.default_duration || 'None' }}</strong></mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="body-profile-form__row">
+      <label for="description" class="body-profile-form__label">Description</label>
+      <mat-form-field appearance="outline" class="body-profile-form__inp">
+        <textarea matInput formControlName="custom_description" placeholder="Write something about service..." id="description"></textarea>
+        <mat-hint>Default value: <strong>{{ selectedTemplate?.default_description || 'None' }}</strong></mat-hint>
+      </mat-form-field>
+    </div>
+    <button mat-flat-button class="body-profile-form__button main-button">Save changes</button>
+  </form>
+</div>
