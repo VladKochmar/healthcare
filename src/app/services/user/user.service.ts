@@ -42,7 +42,11 @@ export class UserService {
     return this.user$;
   }
 
-  public ensureUserLoaded(): Observable<UserProfile> {
+  public ensureUserLoaded(): Observable<UserProfile | null> {
+    if (!this.authService.isTokenValid()) {
+      return of(null);
+    }
+
     return this.getUser().pipe(
       switchMap((user) => {
         if (user) {
@@ -105,5 +109,13 @@ export class UserService {
         this.authService.logout();
       })
     );
+  }
+
+  public clearUser() {
+    this.user$.next(null);
+  }
+
+  public updateUserAfterRegistration() {
+    this.getProfile().subscribe();
   }
 }

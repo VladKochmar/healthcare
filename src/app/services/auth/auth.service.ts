@@ -3,6 +3,7 @@ import { BehaviorSubject, catchError, tap, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment.development';
 import { jwtDecode } from 'jwt-decode';
+import { UserService } from '../user/user.service';
 
 interface SignupForm {
   name: string;

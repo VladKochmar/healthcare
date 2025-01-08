@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="header__column header__column_flex">
+    <a [routerLink]="['/']" class="header__logo">MyDoctor</a>
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__item"><a href="#" class="header__link">About Us</a></li>
+        <li class="header__item"><a href="#" class="header__link">Catalog</a></li>
+      </ul>
+    </nav>
+    <app-search-bar class="header__search"></app-search-bar>
+  </div>
+  <div class="header__column">
+    <app-auth-header-section></app-auth-header-section>
+  </div>
+</header>

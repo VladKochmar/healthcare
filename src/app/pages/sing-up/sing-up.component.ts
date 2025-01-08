@@ -18,6 +18,7 @@ import { ErrorMessagesService } from '../../services/error-messages/error-messag
 import { Router } from '@angular/router';
 import { ClearObservable } from '../../directives/clear-observable/clear-observable.directive';
 import { catchError, of, takeUntil, tap } from 'rxjs';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-sing-up',
@@ -41,6 +42,7 @@ export class SingUpComponent extends ClearObservable implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private userService: UserService,
     private errorMessagesService: ErrorMessagesService,
     private router: Router
   ) {
@@ -103,6 +105,7 @@ export class SingUpComponent extends ClearObservable implements OnInit {
       .pipe(
         tap(() => {
           this.router.navigate(['/']);
+          this.userService.updateUserAfterRegistration();
         }),
         catchError((error) => {
           this.authError = error.message;

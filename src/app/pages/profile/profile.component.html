@@ -3,7 +3,7 @@
   <form [formGroup]="form" (submit)="onSubmit()" enctype="multipart/form-data" class="user-profile__form profile-form">
     <div class="profile-form__header">
       <label class="profile-form__photo-field field-photo">
-        <app-avatar [avatar]="user.avatar" [name]="user.name"></app-avatar>
+        <app-avatar [avatar]="user.avatar" [name]="user.name" [size]="64" [font]="24"></app-avatar>
         <div class="field-photo__button">
           <mat-icon aria-hidden="false" aria-label="camera icon" fontIcon="photo_camera" class="field-photo__icon"></mat-icon>
         </div>

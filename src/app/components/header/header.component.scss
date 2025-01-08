@@ -1,0 +1,54 @@
+@import "../../../assets/styles/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: $white;
+  padding: 1rem 2rem;
+  background-color: $primary;
+  // .header__column
+  &__column {
+    // .header__column_flex
+    &_flex {
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      gap: 0 1.5rem;
+    }
+  }
+  // .header__logo
+  &__logo {
+    font-family: "Irish Grover";
+    font-size: 1.5rem;
+  }
+  // .header__nav
+  &__nav {
+  }
+  // .header__list
+  &__list {
+    display: inline-flex;
+    align-items: center;
+    gap: 0 1.5rem;
+  }
+  // .header__item
+  &__item {
+  }
+  // .header__link
+  &__link {
+    font-weight: 500;
+  }
+  // .header__search
+  &__search {
+    flex: 0 1 25rem;
+    width: 100%;
+  }
+  // .header__login
+  &__login {
+  }
+  // .header__signup
+  &__signup {
+    font-weight: 600;
+  }
+}

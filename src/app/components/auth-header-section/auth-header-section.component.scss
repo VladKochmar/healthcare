@@ -1,0 +1,72 @@
+@import "../../../assets/styles/variables";
+
+.auth-links {
+  display: inline-flex;
+  gap: 0 1.5rem;
+  // .auth-links__signup
+  &__signup {
+    font-weight: 600;
+  }
+}
+
+.user-menu {
+  position: relative;
+  // .user-menu__avatar
+  &__avatar {
+  }
+  // .user-menu__dropdown
+  &__dropdown {
+    color: $text-secondary;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    border-radius: 0.25rem;
+    background-color: $white;
+    box-shadow: $shadow-tiny;
+    transform: scaleY(0);
+    transform-origin: top center;
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+    &.open {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+  // .user-menu__name
+  &__name {
+    color: $text-main;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    border-bottom: 1px solid $disabled;
+  }
+  // .user-menu__list
+  &__list {
+  }
+  // .user-menu__item
+  &__item {
+  }
+  // .user-menu__link
+  &__link,
+  &__logout {
+    width: 100%;
+    display: flex;
+    gap: 0 0.5rem;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease 0s, color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $text-main;
+        background-color: $background;
+      }
+    }
+  }
+  // .user-menu__icon
+  &__icon {
+    color: $text-main;
+  }
+}

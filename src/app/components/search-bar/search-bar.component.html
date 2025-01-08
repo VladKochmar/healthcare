@@ -1,0 +1,18 @@
+<div class="search-bar">
+  <form [formGroup]="form" class="search-bar__form">
+    <mat-form-field appearance="outline" class="search-bar__input">
+      <input matInput type="text" placeholder="Пошук лікарів..." formControlName="search" (blur)="switchMenu()" (focus)="switchMenu()" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </form>
+  <div class="search-bar__dropdown dropdown" [ngClass]="{ 'open': isOpened }">
+    <ul class="dropdown__list">
+      <li class="dropdown__item"><a href="#" class="dropdown__link">Taras Shevchenko</a></li>
+      <li class="dropdown__item"><a href="#" class="dropdown__link">Andriy Shevchenko</a></li>
+      <li class="dropdown__item"><a href="#" class="dropdown__link">Oleksiy Shevchenko</a></li>
+    </ul>
+    <div class="dropdown__empty">
+      Nothing was found
+    </div>
+  </div>
+</div>

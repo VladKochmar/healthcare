@@ -1,0 +1,63 @@
+@import "../../../assets/styles/variables";
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  // .search-bar__form
+  &__form {
+  }
+  // .search-bar__input
+  &__input {
+    width: 100%;
+    background-color: $white;
+    border-radius: $rounded;
+  }
+  // .search-bar__dropdown
+  &__dropdown {
+  }
+}
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  background-color: $white;
+  border: 1px solid $secondary;
+  box-shadow: $shadow-main;
+  border-radius: 0 0 0.25rem 0.25rem;
+  transform: scaleY(0);
+  transform-origin: top center;
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  &.open {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  // .dropdown__list
+  &__list {
+  }
+  // .dropdown__item
+  &__item {
+  }
+  // .dropdown__link
+  &__link {
+    display: block;
+    color: $text-main;
+    padding: 1rem 0.75rem;
+    transition: background 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $background;
+      }
+    }
+  }
+  // .dropdown__empty
+  &__empty {
+    color: $text-secondary;
+    padding: 0.75rem;
+    text-align: center;
+  }
+}

@@ -22,6 +22,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-service-editor',

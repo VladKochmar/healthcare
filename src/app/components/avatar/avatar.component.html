@@ -1,7 +1,7 @@
-<div class="avatar">
+<div class="avatar" [ngStyle]="{ width: size + 'px', height: size + 'px' }">
   @if(avatar) {
   <img [src]="'http://localhost:3000/uploads/' + avatar" [alt]="name" class="avatar__img" />
   } @else {
-  <div class="avatar__default">{{ name[0] }}</div>
+  <div class="avatar__default" [ngStyle]="{ fontSize: font + 'px' }">{{ name[0] }}</div>
   }
 </div>

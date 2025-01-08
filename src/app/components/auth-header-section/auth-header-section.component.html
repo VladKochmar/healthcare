@@ -1,0 +1,27 @@
+<div>
+  @if (user$ | async; as user) {
+  <div class="user-menu">
+    <button class="user-menu__avatar" (click)="toggleMenu($event)"><app-avatar [avatar]="user.avatar" [name]="user.name"></app-avatar></button>
+    <div class="user-menu__dropdown" [ngClass]="{ 'open': isMenuOpen }">
+      <div class="user-menu__name">
+        {{ user.name }}
+      </div>
+      <ul class="user-menu__list">
+        @for (page of pagesList; track page.id) {
+        <li class="user-menu__item">
+          <a [routerLink]="[page.path]" class="user-menu__link"><mat-icon class="user-menu__icon">{{ page.icon }}</mat-icon>{{ page.title }}</a>
+        </li>
+        }
+        <li class="user-menu__item">
+          <button class="user-menu__logout" (click)="onDelete()"><mat-icon class="user-menu__icon">logout</mat-icon>Log out</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  } @else {
+  <ul class="auth-links">
+    <li class="auth-links__item"><a [routerLink]="['/log-in']" class="auth-links__login">Log In</a></li>
+    <li class="auth-links__item"><a [routerLink]="['/sign-up']" class="auth-links__signup">Sign Up</a></li>
+  </ul>
+  }
+</div>

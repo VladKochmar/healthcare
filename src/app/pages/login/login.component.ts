@@ -19,6 +19,7 @@ import { ValidationService } from '../../services/validation/validation.service'
 import { ErrorMessagesService } from '../../services/error-messages/error-messages.service';
 import { catchError, of, takeUntil, tap } from 'rxjs';
 import { ClearObservable } from '../../directives/clear-observable/clear-observable.directive';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -41,6 +42,7 @@ export class LoginComponent extends ClearObservable implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private userService: UserService,
     private errorMessagesService: ErrorMessagesService,
     private router: Router
   ) {
@@ -93,6 +95,7 @@ export class LoginComponent extends ClearObservable implements OnInit {
       .login(userData)
       .pipe(
         tap(() => {
+          this.userService.updateUserAfterRegistration();
           this.router.navigate(['/']);
         }),
         catchError((error) => {
