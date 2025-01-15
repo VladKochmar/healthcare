@@ -34,7 +34,7 @@ interface User {
 }
 
 interface DecodedToken {
-  role_id: number;
+  role_id: string;
   exp: number;
   iat: number;
 }
@@ -78,7 +78,7 @@ export class AuthService {
     if (!token) return false;
 
     const decoded: DecodedToken = jwtDecode(token);
-    const isDoctor = decoded.role_id === 1;
+    const isDoctor = parseInt(decoded.role_id) === 1;
 
     return isDoctor;
   }

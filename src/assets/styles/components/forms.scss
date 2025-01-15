@@ -53,6 +53,8 @@
   }
 }
 
+.filters-form__select > * .mat-mdc-form-field-subscript-wrapper,
+.filters-form__inputs > * .mat-mdc-form-field-subscript-wrapper,
 .search-bar__input .mat-mdc-form-field-subscript-wrapper {
   display: none;
 }

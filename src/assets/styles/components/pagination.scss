@@ -1,0 +1,31 @@
+.catalog-pagination .mat-mdc-paginator-container {
+  justify-content: center;
+  background-color: transparent;
+}
+
+.custom-paginator-container {
+  display: flex;
+  gap: 0 0.5rem;
+  padding: 0 0.5rem;
+}
+.custom-page-button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $gray-light;
+  border-radius: $rounded;
+  background-color: $white;
+  cursor: pointer;
+  color: $text-main;
+  font-size: 1.125rem;
+  transition: background 0.3s ease 0s, color 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+  // .custom-page-button_active
+  &_active {
+    background-color: $primary;
+    color: $white;
+  }
+}

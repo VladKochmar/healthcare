@@ -92,7 +92,7 @@ export class ServiceEditorComponent implements OnInit {
           .loadTemplateById(templateId)
           .subscribe((response) => {
             this.selectedTemplate = response.data;
-            // this.updateFormWithTemplate(response.data);
+            this.updateFormWithTemplate(response.data);
           });
       }
     });

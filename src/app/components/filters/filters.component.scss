@@ -1,0 +1,30 @@
+.filters-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  padding-bottom: 2rem;
+  // .filters-form__label
+  &__label {
+    font-weight: 500;
+  }
+  // .filters-form__range
+  &__range {
+    max-width: 20rem;
+  }
+  // .filters-form__inputs
+  &__inputs {
+    display: flex;
+    gap: 0 0.75rem;
+  }
+  // .filters-form__select
+  &__select {
+    flex: 0 1 20rem;
+    // .filters-form__select_sort
+    &_sort {
+      max-width: 12.5rem;
+    }
+    & .mat-mdc-form-field {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.services-catalog {
+  padding: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
+  @media (width > 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

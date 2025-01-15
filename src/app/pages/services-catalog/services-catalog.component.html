@@ -1,0 +1,15 @@
+<div class="container">
+  <app-filters></app-filters>
+  <h1 class="title-h1">Catalog</h1>
+  <div class="services-catalog">
+    @for (service of services$ | async; track service.id) {
+    <app-service-card [data]="service"></app-service-card>
+    }
+  </div>
+  @if (totalServices$ | async; as totalServices) {
+  @if (totalServices) {
+  <mat-paginator appCustomPagination [appCustomLength]="totalServices" [length]="totalServices" [pageSize]="pageSize" [pageIndex]="currentPage" (page)="onPageChange($event)" class="catalog-pagination">
+  </mat-paginator>
+  }
+  }
+</div>

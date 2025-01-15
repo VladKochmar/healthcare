@@ -52,4 +52,11 @@ export const routes: Routes = [
       ),
     canActivate: [authGuard, roleGuard],
   },
+  {
+    path: 'catalog',
+    loadComponent: () =>
+      import('./pages/services-catalog/services-catalog.component').then(
+        (m) => m.ServicesCatalogComponent
+      ),
+  },
 ];

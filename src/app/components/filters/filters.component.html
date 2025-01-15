@@ -1,0 +1,44 @@
+<form [formGroup]="filtersForm" class="filters-form">
+  <div class="filters-form__range" formGroupName="price">
+    <div class="filters-form__label">Price</div>
+    <div class="filters-form__inputs">
+      <mat-form-field appearance="outline">
+        <input matInput type="number" formControlName="min" placeholder="Min Price" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput type="number" formControlName="max" placeholder="Max Price" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="filters-form__range" formGroupName="duration">
+    <div class="filters-form__label">Duration (min)</div>
+    <div class="filters-form__inputs">
+      <mat-form-field appearance="outline">
+        <input matInput type="number" formControlName="min" placeholder="Min Duration" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput type="number" formControlName="max" placeholder="Max Duration" />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="filters-form__select">
+    <div class="filters-form__label">Services</div>
+    <mat-form-field appearance="outline">
+      <mat-select placeholder="Select service type" formControlName="selectedTemplates" multiple>
+        @for (template of templates$ | async; track template.template_id) {
+        <mat-option [value]="template.template_id">{{ template.name }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="filters-form__select filters-form__select_sort">
+    <div class="filters-form__label">Sort by</div>
+    <mat-form-field appearance="outline">
+      <mat-select formControlName="sort">
+        <mat-option value="">Default</mat-option>
+        <mat-option value="price:asc">Price: Low to High</mat-option>
+        <mat-option value="price:desc">Price: High to Low</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</form>

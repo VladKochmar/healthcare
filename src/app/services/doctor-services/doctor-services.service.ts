@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
@@ -41,14 +41,26 @@ interface ResnponseServiceTemplates {
   };
 }
 
+interface ResnponseServices {
+  data: {
+    count: number;
+    documents: DoctorService[];
+  };
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class DoctorServicesService {
-  services$ = new BehaviorSubject<DoctorService[]>([]);
-  templates$ = new BehaviorSubject<ServiceTemplate[]>([]);
+  private count$ = new BehaviorSubject<number>(0);
+  private services$ = new BehaviorSubject<DoctorService[]>([]);
+  private templates$ = new BehaviorSubject<ServiceTemplate[]>([]);
 
   constructor(private http: HttpClient) {}
+
+  public getCount() {
+    return this.count$;
+  }
 
   public getServices() {
     return this.services$;
@@ -56,6 +68,21 @@ export class DoctorServicesService {
 
   public getTemplates() {
     return this.templates$;
+  }
+
+  public loadServices(params?: HttpParams) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    const url = `${environment.API_URL}/services`;
+
+    return this.http.get<ResnponseServices>(url, { headers, params }).pipe(
+      tap((response) => {
+        this.count$.next(response.data.count);
+        this.services$.next(response.data.documents);
+      })
+    );
   }
 
   public loadSerivcesByDoctorId(id: number) {
